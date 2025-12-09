@@ -1,0 +1,33 @@
+﻿@page
+@model ZeroWeb.UI.Pages.Configuration.AQL.IndexModel
+@{
+}
+@section EndStyles {
+
+}
+
+@section EndScripts {
+    <script src="/apps/Configuration/AQL/Index.js"></script>
+}
+
+<div class="page-breadcrumb" style="height:40px">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title" style="padding-top:5px">AQL Detail</h4>
+        </div>
+    </div>
+</div>
+<div style="height: calc(100vh - 90px);width:100%;min-height:500px;overflow: auto;">
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-body">
+                        <div id="gridbox" style="min-height:350px; height: 840px; background-color:white;max-width:100%"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+<partial name="_AQLDetail" />

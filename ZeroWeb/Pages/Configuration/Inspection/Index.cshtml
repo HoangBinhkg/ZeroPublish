@@ -1,0 +1,76 @@
+﻿@page
+@model ZeroWeb.UI.Pages.Configuration.Inspection.IndexModel
+@{
+}
+
+@section EndStyles {
+
+}
+
+@section EndScripts {
+    <script src="/apps/Configuration/Inspection/Index.js"></script>
+}
+
+<div class="page-breadcrumb" style="height:40px">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title" style="padding-top:5px">Inspection Type</h4>
+        </div>
+    </div>
+</div>
+<div style="height: calc(100vh - 90px);width:100%;min-height:500px;overflow: auto;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="height: 200px">
+                    <div class="card-body">
+                        <div class="card-title">Search Inspection Type</div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group row">
+                                    <label for="fname" class="col-sm-4 text-end control-label col-form-label">Inspection Type Name</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="txtInspectionTypeName" placeholder="Inspection Type Name Here">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                            <button type="button" class="btn btn-primary btn-sm" id="btnSearch">
+                                Search
+                            </button>
+                            <button type="button" class="btn btn-secondary btn-sm" id="btnAddNew">
+                                Add new
+                            </button>
+                            <button type="button" class="btn btn-dark btn-sm" id="btnClear">
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="gridboxMain" style="min-height:350px; height: 560px; background-color:white;max-width:100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="gridboxSub" style="min-height:350px; height: 560px; background-color:white;max-width:100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_InspectionTypeDetail" />
+<partial name="_InspectionDetail" />

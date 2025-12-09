@@ -1,0 +1,47 @@
+﻿@page
+@using ZeroWeb.Models.SharedObjects;
+
+@model ZeroWeb.UI.Pages.Checklist.IndexModel
+@{
+    var checklistItem = Model.ChecklistData?.Items?.FirstOrDefault();
+}
+
+@section EndStyles {
+
+}
+
+@section EndScripts {
+    <script src="/apps/Checklist/Index.js"></script>
+}
+
+
+<input type="hidden" id="txtChecklistId" value="@Model.ChecklistId" />
+
+<div class="page-breadcrumb" style="height:40px">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title" style="padding-top:5px">Checklist</h4>
+        </div>
+    </div>
+</div>
+<div style="height: calc(100vh - 90px);width:100%;min-height:500px;overflow: auto;">
+    <div class="container-fluid" style="height:100%;padding-bottom: 10px">
+        <div class="row" style="height:100%">
+            <div class="col-md-4" style="height:100%">
+                <div class="card" style="height:100%">
+                    <partial name="_Checklist" model="checklistItem" />
+                </div>
+            </div>
+
+            <div class="col-md-8" style="height:100%">
+                <div class="card" style="height:100%;width:100%">
+                    <div class="card-body" style="height:100%;width:100%">
+                        <div class="card-title">@checklistItem?.InspectionTypeCode - Inspection parameter / Defect qty - Các chỉ tiêu kiểm tra / Số lỗi</div>
+                        <div id="gridbox" style="min-height:350px; height: calc( 100% - 50px ); background-color:white;max-width:100%;min-width: 100% !important"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="_Hold"/>
